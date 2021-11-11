@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for([@list, @bookmark]) do |f| %>
+    <%= f.association :movie, label:"Which movie?" %>
+    <%= f.input :comment, label:"Leave a comment" %>
+    <%= f.submit %>
+  <% end %>
+  <br>
+  <%= link_to "Retour", list_path(@list.id) %>
+</div>

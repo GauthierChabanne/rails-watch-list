@@ -1,0 +1,20 @@
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://previews.123rf.com/images/kchung/kchung1812/kchung181200084/126832986-banni%C3%A8res-de-pop-corn-au-caramel-avec-des-cors-volants-et-des-articles-de-cin%C3%A9ma-en-illustration-3d.jpg);">
+    <div class="container text-center">
+      <h1> CineMac, <strong>Movie Lists</strong> that <strong>suits your taste</strong>!</h1>
+      <p>Manage your movies list for optimal bindgewatching</p>
+       <%= link_to "+ New list", new_list_path, class: "btn btn-primary p-3" %>
+    </div>
+  </div>
+
+<div class="container m-5">
+  <div class="row">
+    <h3>All Lists</h3>
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div id="<%= list.name  %> " class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= link_to list.name, list_path(list.id), id:"home-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

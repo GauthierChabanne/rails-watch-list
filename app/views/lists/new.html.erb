@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Create your list</h1>
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name, label:"Name", placeholder: "The toon list" %>
+    <%= f.submit %>
+  <% end %>
+  <br>
+  <%= link_to "Retour", lists_path %>
+</div>

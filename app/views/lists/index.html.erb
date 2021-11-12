@@ -14,7 +14,7 @@
       <li class="nav-item">
       </li>
       <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2021/03/18/node_962409/50807831/public/2021/03/18/B9726464804Z.1_20210318144957_000%2BGAJHQ0LFJ.2-0.jpg?itok=-OWzTz0Q1616075403 />
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -37,14 +37,16 @@
   <div class="row">
     <h3>All Lists</h3>
     <% @lists.each do |list| %>
-      <div class="col-4">
-      <% if list.photo.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
-          <%= link_to list.name, list_path(list.id), id:"home-link" %>
-        </div>
-        <% else %>
-        <div class="card-category m-3">
-          <%= link_to list.name, list_path(list.id), id:"home-link" %>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+          <% if list.photo.attached? %>
+            <div class="card-category" id="cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+              <%= link_to list.name, list_path(list.id), id:"home-link" %>
+              <%= link_to "", list_path(list.id), method: :delete, class: "fas fa-times-circle", id: "delete"  %>
+            </div>
+            <% else %>
+            <div class="card-category m-3" id="cards" >
+              <%= link_to list.name, list_path(list.id), id:"home-link"  %>
+              <%= link_to "", list_path(list.id), method: :delete, class: "fas fa-times-circle", id: "delete" %>
         </div>
       <% end %>
       </div>

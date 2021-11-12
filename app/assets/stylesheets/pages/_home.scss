@@ -2,13 +2,8 @@
 #home-link {
   text-decoration: none;
   color: white;
+  padding: 24%;
   &:hover {
-    color: black;
+    font-size: larger;
   }
-}
-
-#Medieval-Fantasy {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-  background-image: url(https://wallpaperaccess.com/full/1399270.jpg);
-
 }

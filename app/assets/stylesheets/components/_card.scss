@@ -52,3 +52,17 @@
   top: -20px;
   width: 40px;
 }
+
+#cards {
+  position: relative;
+}
+
+#delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: rgba(256, 256, 256, 0.4);
+  &:hover {
+    color: rgba(256, 256, 256, 1);
+  }
+}

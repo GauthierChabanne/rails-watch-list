@@ -35,17 +35,16 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-12">
+    <div class="col-lg-9 col-md-12">
       <div class="row">
         <% @list.bookmarks.each do |bookmark| %>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12 p-1">
               <div class="card-trip m-3">
               <img src="<%= bookmark.movie.poster_url %> " style="object-fit:cover"/>
                 <div class="card-trip-infos">
                   <div>
-                    <h2><%= bookmark.movie.title %></h2>
+                    <h2><%= bookmark.movie.title %><%= bookmark.movie.rating %></h2>
                     <p><%= bookmark.movie.overview %></p>
-                     <h2><%= bookmark.movie.rating %></h2>
                   </div>
                   <br>
                   <%= link_to "", bookmark_path(bookmark.id), method: :delete, class: "fa fa-trash" %>
@@ -58,7 +57,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-lg-4 col-md-12">
+    <div class="col-lg-3 col-md-12">
       <div class="border p-4 sticky-top" style="background-color: white">
         <h2>Add a movie</h2>
         <%= simple_form_for([@list, @bookmark]) do |f| %>

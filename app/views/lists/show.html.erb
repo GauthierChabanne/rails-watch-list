@@ -35,10 +35,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-lg-8 col-md-12">
       <div class="row">
         <% @list.bookmarks.each do |bookmark| %>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="card-trip m-3">
               <img src="<%= bookmark.movie.poster_url %> " style="object-fit:cover"/>
                 <div class="card-trip-infos">
@@ -58,7 +58,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-lg-4 col-md-12">
       <div class="border p-4 sticky-top" style="background-color: white">
         <h2>Add a movie</h2>
         <%= simple_form_for([@list, @bookmark]) do |f| %>

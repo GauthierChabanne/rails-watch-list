@@ -1,7 +1,6 @@
 class BookmarksController < ApplicationController
 
   def new
-    @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
   end
 
@@ -14,7 +13,7 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to list_path(@bookmark.list_id)
     else
-      render :new
+      render 'lists/show'
     end
   end
 
